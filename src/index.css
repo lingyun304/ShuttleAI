@@ -1,0 +1,280 @@
+/* 剧梭AI (Shuttle) - 多主题可切换 Design System */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Inter:wght@400;500;600;700&display=swap');
+
+/* ===================================================
+   1. 默认主题：清新水墨古风 (Bamboo & Ink - Warm Paper)
+   =================================================== */
+:root, body.theme-bamboo {
+  --bg-primary: #F7F6F0; /* 宣纸暖白底色 */
+  --bg-secondary: #FFFFFF; /* 纯白面板 */
+  --bg-tertiary: #F1F0E8;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #FFFFFF;
+
+  --accent-bamboo: #2C6E49; /* 竹青 */
+  --accent-ink: #1F2937;
+  --accent-gold: #B8860B;
+
+  --gradient-bamboo: linear-gradient(135deg, #2C6E49 0%, #40916C 100%);
+  --gradient-kling: linear-gradient(135deg, #2C6E49 0%, #B8860B 100%);
+  
+  --text-primary: #1F2937;
+  --text-secondary: #4B5563;
+  --text-muted: #8C949E;
+
+  --border-color: #E2E0D8;
+  --shadow-paper: 0 4px 16px -2px rgba(44, 110, 73, 0.06);
+  --font-serif: 'Noto Serif SC', 'STSong', serif;
+  --font-sans: 'Noto Sans SC', sans-serif;
+}
+
+/* ===================================================
+   2. 主题二：赛博炫彩黑金 (Cyber Neon Dark Tech)
+   =================================================== */
+body.theme-cyber {
+  --bg-primary: #090D16;
+  --bg-secondary: #0F172A;
+  --bg-tertiary: #1E293B;
+  --bg-card: rgba(30, 41, 59, 0.85);
+  --bg-card-hover: rgba(51, 65, 85, 0.95);
+
+  --accent-bamboo: #8B5CF6;
+  --accent-ink: #EC4899;
+  --accent-gold: #38BDF8;
+
+  --gradient-bamboo: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
+  --gradient-kling: linear-gradient(135deg, #FF5E62 0%, #FF9966 100%);
+
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+
+  --border-color: rgba(255, 255, 255, 0.12);
+  --shadow-paper: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+  --font-serif: 'Inter', sans-serif;
+  --font-sans: 'Inter', sans-serif;
+}
+
+/* ===================================================
+   3. 主题三：极简禅意雅白 (Zen Minimalist White)
+   =================================================== */
+body.theme-zen {
+  --bg-primary: #FAFAFA;
+  --bg-secondary: #FFFFFF;
+  --bg-tertiary: #F4F4F5;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #FFFFFF;
+
+  --accent-bamboo: #18181B;
+  --accent-ink: #71717A;
+  --accent-gold: #059669;
+
+  --gradient-bamboo: linear-gradient(135deg, #18181B 0%, #3F3F46 100%);
+  --gradient-kling: linear-gradient(135deg, #059669 0%, #10B981 100%);
+
+  --text-primary: #09090B;
+  --text-secondary: #52525B;
+  --text-muted: #A1A1AA;
+
+  --border-color: #E4E4E7;
+  --shadow-paper: 0 2px 10px rgba(0,0,0,0.03);
+  --font-serif: 'Noto Sans SC', sans-serif;
+  --font-sans: 'Noto Sans SC', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(150, 150, 150, 0.3);
+  border-radius: 9999px;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+}
+
+.text-gradient {
+  background: var(--gradient-bamboo);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Cards */
+.glass-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  box-shadow: var(--shadow-paper);
+  transition: all 0.25s ease;
+}
+
+.glass-panel-hover:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--accent-bamboo);
+  transform: translateY(-2px);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+  font-family: var(--font-sans);
+}
+
+.btn-primary, .btn-kling {
+  background: var(--gradient-bamboo);
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(44, 110, 73, 0.2);
+}
+.btn-primary:hover, .btn-kling:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+.btn-secondary:hover {
+  background: rgba(44, 110, 73, 0.06);
+  color: var(--accent-bamboo);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text-secondary);
+}
+.btn-ghost:hover {
+  color: var(--accent-bamboo);
+  background: rgba(44, 110, 73, 0.08);
+}
+
+.btn-sm {
+  padding: 5px 12px;
+  font-size: 0.82rem;
+  border-radius: 6px;
+}
+
+.btn-lg {
+  padding: 12px 24px;
+  font-size: 1.05rem;
+  border-radius: 12px;
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.badge-purple, .badge-bamboo {
+  background: rgba(44, 110, 73, 0.1);
+  color: var(--accent-bamboo);
+  border: 1px solid rgba(44, 110, 73, 0.2);
+}
+
+.badge-kling {
+  background: rgba(184, 134, 11, 0.1);
+  color: var(--accent-gold);
+  border: 1px solid rgba(184, 134, 11, 0.25);
+}
+
+.badge-emerald {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10B981;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+/* Form Inputs - 清新优雅白面底色 */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.input-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.input-field, .textarea-field, .select-field {
+  width: 100%;
+  padding: 10px 14px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.92rem;
+  outline: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+
+.input-field:focus, .textarea-field:focus, .select-field:focus {
+  border-color: var(--accent-bamboo);
+  box-shadow: 0 0 0 3px rgba(44, 110, 73, 0.12);
+}
+
+/* Vertical 9:16 Short Drama Aspect Ratio Box */
+.aspect-vertical {
+  position: relative;
+  width: 100%;
+  padding-top: 177.78%;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #111;
+}
+.aspect-vertical > * {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

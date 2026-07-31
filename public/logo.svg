@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="shuttleGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B5CF6" />
+      <stop offset="50%" stop-color="#EC4899" />
+      <stop offset="100%" stop-color="#3B82F6" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  <rect width="100" height="100" rx="24" fill="#0F172A" />
+  <path d="M25 75 L50 25 L75 75 L60 65 L50 70 L40 65 Z" fill="url(#shuttleGlow)" filter="url(#glow)" />
+  <circle cx="50" cy="45" r="7" fill="#FFFFFF" />
+  <path d="M35 78 Q50 88 65 78" stroke="#8B5CF6" stroke-width="3" stroke-linecap="round" fill="none" />
+</svg>
