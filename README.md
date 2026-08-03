@@ -4,7 +4,7 @@
 
 ```text
 ShuttleAI/
-├── frontend/    # 前端 UI (React) 与 BFF 大模型服务 (Next.js API Routes)，样式采用原生 CSS
+├── frontend/    # Next.js 融合前端应用 (React UI + BFF 大模型 API 路由 + 原生 CSS)
 └── backend/     # 核心业务后端服务 (Java Spring Boot 3 + Maven)
 ```
 
@@ -14,24 +14,20 @@ ShuttleAI/
 
 前端负责用户交互界面（如剧本工作台、分镜板、播放器），并包含 **Next.js BFF (Backend For Frontend)** API 路由，用于安全代理与三方大模型 (DeepSeek, OpenAI 等) 的流式 (SSE) 交互。
 
-* **UI 框架**：React 18
-* **BFF 框架**：Next.js (App Router API Routes)
-* **样式方案**：原生 CSS (Vanilla CSS，样式统一收纳于 `src/index.css`)
+* **技术栈**：React 18 + Next.js 14 (App Router) + 原生 CSS
+* **单一统一服务**：支持在 `http://localhost:3000` 上同时访问前端页面和 BFF 大模型接口
 
 ```bash
 cd frontend
 
-# 安装依赖
+# 1. 安装依赖 (初次运行)
 npm install
 
-# 方式 A：运行 Vite 前端开发服务器 (默认端口 5173)
+# 2. 启动服务 (同时运行 React 界面 与 BFF 大模型接口，监听 3000 端口)
 npm run dev
-
-# 方式 B：运行 Next.js 前端及 BFF 路由 (默认端口 3000)
-npm run dev:next
 ```
 
-BFF 大模型流式接口：`POST /api/ai/chat`
+* **BFF 大模型流式接口**：`POST http://localhost:3000/api/ai/chat`
 
 ---
 
@@ -46,9 +42,9 @@ cd backend
 mvn spring-boot:run
 ```
 
-后端服务监听端口：`8080`
-基础 API 根路径：`http://localhost:8080/api`
-健康检查接口：`GET http://localhost:8080/api/health`
+* **后端服务端口**：`8080`
+* **基础 API 根路径**：`http://localhost:8080/api`
+* **健康检查接口**：`GET http://localhost:8080/api/health`
 
 ---
 
