@@ -4,7 +4,7 @@
 
 ```text
 ShuttleAI/
-├── frontend/    # 前端 UI 与 BFF 大模型服务 (Next.js / React + Tailwind/CSS)
+├── frontend/    # 前端 UI (React) 与 BFF 大模型服务 (Next.js API Routes)，样式采用原生 CSS
 └── backend/     # 核心业务后端服务 (Java Spring Boot 3 + Maven)
 ```
 
@@ -13,6 +13,10 @@ ShuttleAI/
 ## 🛠️ 1. 前端与 BFF 启动指南 (`frontend/`)
 
 前端负责用户交互界面（如剧本工作台、分镜板、播放器），并包含 **Next.js BFF (Backend For Frontend)** API 路由，用于安全代理与三方大模型 (DeepSeek, OpenAI 等) 的流式 (SSE) 交互。
+
+* **UI 框架**：React 18
+* **BFF 框架**：Next.js (App Router API Routes)
+* **样式方案**：原生 CSS (Vanilla CSS，样式统一收纳于 `src/index.css`)
 
 ```bash
 cd frontend
