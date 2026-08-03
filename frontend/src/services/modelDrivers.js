@@ -28,6 +28,9 @@ export const DEFAULT_MODEL_CONFIG = {
 };
 
 export function getModelConfig() {
+  if (typeof window === 'undefined') {
+    return DEFAULT_MODEL_CONFIG;
+  }
   const saved = localStorage.getItem(STORAGE_KEY_CONFIG);
   if (!saved) return DEFAULT_MODEL_CONFIG;
   try {
@@ -38,7 +41,9 @@ export function getModelConfig() {
 }
 
 export function saveModelConfig(config) {
-  localStorage.setItem(STORAGE_KEY_CONFIG, JSON.stringify(config));
+  if (typeof window !== 'undefined') {
+    localStorage.setItem(STORAGE_KEY_CONFIG, JSON.stringify(config));
+  }
 }
 
 /**
