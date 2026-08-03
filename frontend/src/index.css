@@ -3,34 +3,67 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Inter:wght@400;500;600;700&display=swap');
 
 /* ===================================================
-   1. 默认主题：清新水墨古风 (Bamboo & Ink - Warm Paper)
+   1. 清新竹子主题 (Bamboo Emerald & Warm Paper)
    =================================================== */
 :root, body.theme-bamboo {
-  --bg-primary: #F7F6F0; /* 宣纸暖白底色 */
+  --bg-primary: #F4F7F4; /* 清爽竹韵底色 */
   --bg-secondary: #FFFFFF; /* 纯白面板 */
-  --bg-tertiary: #F1F0E8;
+  --bg-tertiary: #E8F0E9;
   --bg-card: #FFFFFF;
-  --bg-card-hover: #FFFFFF;
+  --bg-card-hover: #F0F7F1;
 
-  --accent-bamboo: #2C6E49; /* 竹青 */
-  --accent-ink: #1F2937;
-  --accent-gold: #B8860B;
+  --accent-bamboo: #059669; /* 翡翠竹青 */
+  --accent-ink: #064E3B; /* 墨青 */
+  --accent-gold: #D97706; /* 暖金 */
+  --accent-glow: rgba(5, 150, 105, 0.18);
 
-  --gradient-bamboo: linear-gradient(135deg, #2C6E49 0%, #40916C 100%);
-  --gradient-kling: linear-gradient(135deg, #2C6E49 0%, #B8860B 100%);
-  
-  --text-primary: #1F2937;
-  --text-secondary: #4B5563;
-  --text-muted: #8C949E;
+  --gradient-bamboo: linear-gradient(135deg, #059669 0%, #10B981 50%, #047857 100%);
+  --gradient-kling: linear-gradient(135deg, #059669 0%, #D97706 100%);
+  --gradient-hero: radial-gradient(circle at 50% 20%, rgba(16, 185, 129, 0.15) 0%, rgba(5, 150, 105, 0.05) 50%, transparent 80%);
 
-  --border-color: #E2E0D8;
-  --shadow-paper: 0 4px 16px -2px rgba(44, 110, 73, 0.06);
+  --text-primary: #064E3B;
+  --text-secondary: #374151;
+  --text-muted: #6B7280;
+
+  --border-color: #CBD5E1;
+  --border-glow: rgba(16, 185, 129, 0.3);
+  --shadow-paper: 0 4px 20px -2px rgba(5, 150, 105, 0.08);
   --font-serif: 'Noto Serif SC', 'STSong', serif;
   --font-sans: 'Noto Sans SC', sans-serif;
 }
 
 /* ===================================================
-   2. 主题二：赛博炫彩黑金 (Cyber Neon Dark Tech)
+   2. 火红科技主题 (Crimson Cyberfire Tech)
+   =================================================== */
+body.theme-firetech {
+  --bg-primary: #0A0506; /* 深火黑科技底色 */
+  --bg-secondary: #140A0D; /* 暗红玄石面板 */
+  --bg-tertiary: #1F1014;
+  --bg-card: rgba(26, 13, 17, 0.85);
+  --bg-card-hover: rgba(45, 20, 27, 0.95);
+
+  --accent-bamboo: #FF3344; /* 炽火红 */
+  --accent-ink: #FF6B35; /* 焰橙 */
+  --accent-gold: #F59E0B; /* 熔金 */
+  --accent-glow: rgba(255, 51, 68, 0.25);
+
+  --gradient-bamboo: linear-gradient(135deg, #E11D48 0%, #FF3344 50%, #FF6B35 100%);
+  --gradient-kling: linear-gradient(135deg, #FF3344 0%, #F59E0B 100%);
+  --gradient-hero: radial-gradient(circle at 50% 20%, rgba(225, 29, 72, 0.25) 0%, rgba(255, 107, 53, 0.1) 50%, transparent 80%);
+
+  --text-primary: #FFF0F2;
+  --text-secondary: #FECDD3;
+  --text-muted: #9F1239;
+
+  --border-color: rgba(225, 29, 72, 0.25);
+  --border-glow: rgba(255, 51, 68, 0.5);
+  --shadow-paper: 0 8px 32px 0 rgba(225, 29, 72, 0.25);
+  --font-serif: 'Inter', sans-serif;
+  --font-sans: 'Inter', 'Noto Sans SC', sans-serif;
+}
+
+/* ===================================================
+   3. 赛博炫彩黑金主题 (Cyber Neon Dark Tech)
    =================================================== */
 body.theme-cyber {
   --bg-primary: #090D16;
@@ -42,22 +75,25 @@ body.theme-cyber {
   --accent-bamboo: #8B5CF6;
   --accent-ink: #EC4899;
   --accent-gold: #38BDF8;
+  --accent-glow: rgba(139, 92, 246, 0.25);
 
   --gradient-bamboo: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
   --gradient-kling: linear-gradient(135deg, #FF5E62 0%, #FF9966 100%);
+  --gradient-hero: radial-gradient(circle at 50% 20%, rgba(139, 92, 246, 0.2) 0%, rgba(236, 72, 153, 0.08) 50%, transparent 80%);
 
   --text-primary: #F8FAFC;
   --text-secondary: #94A3B8;
   --text-muted: #64748B;
 
   --border-color: rgba(255, 255, 255, 0.12);
+  --border-glow: rgba(139, 92, 246, 0.4);
   --shadow-paper: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
   --font-serif: 'Inter', sans-serif;
   --font-sans: 'Inter', sans-serif;
 }
 
 /* ===================================================
-   3. 主题三：极简禅意雅白 (Zen Minimalist White)
+   4. 极简禅意雅白主题 (Zen Minimalist White)
    =================================================== */
 body.theme-zen {
   --bg-primary: #FAFAFA;
@@ -69,15 +105,18 @@ body.theme-zen {
   --accent-bamboo: #18181B;
   --accent-ink: #71717A;
   --accent-gold: #059669;
+  --accent-glow: rgba(24, 24, 27, 0.1);
 
   --gradient-bamboo: linear-gradient(135deg, #18181B 0%, #3F3F46 100%);
   --gradient-kling: linear-gradient(135deg, #059669 0%, #10B981 100%);
+  --gradient-hero: radial-gradient(circle at 50% 20%, rgba(24, 24, 27, 0.05) 0%, transparent 70%);
 
   --text-primary: #09090B;
   --text-secondary: #52525B;
   --text-muted: #A1A1AA;
 
   --border-color: #E4E4E7;
+  --border-glow: rgba(24, 24, 27, 0.2);
   --shadow-paper: 0 2px 10px rgba(0,0,0,0.03);
   --font-serif: 'Noto Sans SC', sans-serif;
   --font-sans: 'Noto Sans SC', sans-serif;
@@ -91,11 +130,13 @@ body.theme-zen {
 
 html, body {
   width: 100%;
-  min-height: 100vh;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
   background-color: var(--bg-primary);
   color: var(--text-primary);
   font-family: var(--font-sans);
-  overflow-x: hidden;
   transition: background-color 0.3s ease, color 0.3s ease;
   -webkit-font-smoothing: antialiased;
 }
@@ -277,4 +318,81 @@ h1, h2, h3, h4 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* ===================================================
+   Dock Sidebar Hover Tooltip Styles (提示语浮窗)
+   =================================================== */
+@keyframes tooltipFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) translateX(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+}
+
+.dock-tooltip-item {
+  position: relative !important;
+}
+
+.dock-tooltip-item[data-tooltip]:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: calc(100% + 14px);
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  white-space: nowrap;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  pointer-events: none;
+  z-index: 500;
+  animation: tooltipFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dock-tooltip-item[data-tooltip]:hover::before {
+  content: '';
+  position: absolute;
+  left: calc(100% + 8px);
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 5px 6px 5px 0;
+  border-style: solid;
+  border-color: transparent var(--border-color) transparent transparent;
+  pointer-events: none;
+  z-index: 501;
+  animation: tooltipFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Custom Ultra-Slim & Hidden Scrollbars - Avoid Obtrusive Vertical Scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(128, 128, 128, 0.15);
+  border-radius: 9999px;
+  transition: background 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-bamboo);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(128, 128, 128, 0.2) transparent;
 }

@@ -44,8 +44,8 @@ export default function PricingView({ onPurchaseCredits }) {
   ];
 
   return (
-    <div style={{ maxWidth: '1200px', margin: '30px auto', padding: '0 24px 80px 24px' }}>
-      <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+    <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%', padding: '24px 24px 32px 24px' }}>
+      <div style={{ textAlign: 'center', marginBottom: '24px' }}>
         <span className="badge badge-amber" style={{ marginBottom: '12px' }}>算力积分制 · 永不过期</span>
         <h1 style={{ fontSize: '2.4rem', marginBottom: '12px' }}>透明算力计费套餐</h1>
         <p style={{ color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto' }}>
